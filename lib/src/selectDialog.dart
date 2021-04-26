@@ -239,7 +239,7 @@ class _SelectDialogState<T> extends State<SelectDialog<T>> {
   ///Function that filter item (online and offline) base on user filter
   ///[filter] is the filter keyword
   ///[isFirstLoad] true if it's the first time we load data from online, false other wises
-  void manageItemsByFilter(String filter, {bool isFistLoad = false}) async {
+  void manageItemsByFilter(String filter, {bool isFistLoad = true}) async {
     _loadingNotifier.value = true;
 
     List<T> applyFilter(String filter) {
