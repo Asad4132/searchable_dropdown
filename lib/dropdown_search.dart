@@ -291,7 +291,7 @@ class DropdownSearchState<T> extends State<DropdownSearch<T>> {
               : Text(_selectedItemAsString(data),
                   style: Theme.of(context).textTheme.subtitle1),
         ),
-        if (!widget.showAsSuffixIcons) _manageTrailingIcons(data),
+        // if (!widget.showAsSuffixIcons) _manageTrailingIcons(data),
       ],
     );
   }
@@ -345,37 +345,37 @@ class DropdownSearchState<T> extends State<DropdownSearch<T>> {
   }
 
   ///function that manage Trailing icons(close, dropDown)
-  Widget _manageTrailingIcons(T? data) {
-    final clearButtonPressed = () => _handleOnChangeSelectedItem(null);
-    final dropdownButtonPressed = () => _selectSearchMode(data);
-
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: <Widget>[
-        if (data != null && widget.showClearButton == true)
-          widget.clearButtonBuilder != null
-              ? GestureDetector(
-                  onTap: clearButtonPressed,
-                  child: widget.clearButtonBuilder!(context),
-                )
-              : IconButton(
-                  icon: widget.clearButton ?? const Icon(Icons.clear, size: 24),
-                  onPressed: clearButtonPressed,
-                ),
-        widget.dropdownButtonBuilder != null
-            ? GestureDetector(
-                onTap: dropdownButtonPressed,
-                child: widget.dropdownButtonBuilder!(context),
-              )
-            : IconButton(
-                icon: widget.dropDownButton ??
-                    const Icon(Icons.arrow_drop_down, size: 24),
-                onPressed: dropdownButtonPressed,
-              ),
-      ],
-    );
-  }
+  // Widget _manageTrailingIcons(T? data) {
+  //   final clearButtonPressed = () => _handleOnChangeSelectedItem(null);
+  //   final dropdownButtonPressed = () => _selectSearchMode(data);
+  //
+  //   return Row(
+  //     mainAxisSize: MainAxisSize.min,
+  //     mainAxisAlignment: MainAxisAlignment.end,
+  //     children: <Widget>[
+  //       if (data != null && widget.showClearButton == true)
+  //         widget.clearButtonBuilder != null
+  //             ? GestureDetector(
+  //                 onTap: clearButtonPressed,
+  //                 child: widget.clearButtonBuilder!(context),
+  //               )
+  //             : IconButton(
+  //                 icon: widget.clearButton ?? const Icon(Icons.clear, size: 24),
+  //                 onPressed: clearButtonPressed,
+  //               ),
+  //       widget.dropdownButtonBuilder != null
+  //           ? GestureDetector(
+  //               onTap: dropdownButtonPressed,
+  //               child: widget.dropdownButtonBuilder!(context),
+  //             )
+  //           : IconButton(
+  //               icon: widget.dropDownButton ??
+  //                   const Icon(Icons.arrow_drop_down, size: 24),
+  //               onPressed: dropdownButtonPressed,
+  //             ),
+  //     ],
+  //   );
+  // }
 
   ///open dialog
   Future<T?> _openSelectDialog(T? data) {
