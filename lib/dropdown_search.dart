@@ -328,17 +328,9 @@ class DropdownSearchState<T> extends State<DropdownSearch<T>> {
   ///manage dropdownSearch field decoration
   InputDecoration _manageDropdownDecoration(FormFieldState state, T? data) {
     return (widget.dropdownSearchDecoration ??
-            InputDecoration(
-                contentPadding: EdgeInsets.fromLTRB(12, 12, 0, 0),
-                border: OutlineInputBorder()))
-        .applyDefaults(Theme.of(state.context).inputDecorationTheme)
-        .copyWith(
-            enabled: widget.enabled,
-            labelText: widget.label,
-            hintText: widget.hint,
-            suffixIcon:
-                widget.showAsSuffixIcons ? _manageTrailingIcons(data) : null,
-            errorText: state.errorText);
+        InputDecoration(
+            contentPadding: EdgeInsets.fromLTRB(12, 12, 0, 0),
+            border: OutlineInputBorder()));
   }
 
   ///function that return the String value of an object
